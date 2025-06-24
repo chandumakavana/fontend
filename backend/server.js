@@ -12,12 +12,6 @@ import { connectDB } from './config/database.js';
 // Load environment variables FIRST
 dotenv.config();
 
-// Debug: Check if environment variables are loaded
-console.log('🔧 Environment check:');
-console.log('PORT:', process.env.PORT);
-console.log('NODE_ENV:', process.env.NODE_ENV);
-console.log('MONGODB_URI:', process.env.MONGODB_URI ? 'Set' : 'Not set');
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -73,6 +67,7 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📱 Environment: ${process.env.NODE_ENV}`);
+  console.log(`🌐 Frontend URL: ${process.env.FRONTEND_URL}`);
 });
 
 export default app;
